@@ -5,6 +5,9 @@ import time
 from flask import Flask, Response, redirect, request, url_for
 
 app = Flask(__name__)
+import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 @app.route('/')
 def index():
@@ -20,5 +23,5 @@ def index():
     return redirect(url_for('static', filename='index.html'))
 
 if __name__ == "__main__":
-    app.run(host='localhost', port=5000)
+    app.run(host='0.0.0.0', port=5000)
 
