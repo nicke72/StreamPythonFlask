@@ -1,0 +1,68 @@
+<!doctype html>
+<title>Server Send Events Demo</title>
+ <style> 
+ #testdata {
+    text-align: center;
+  }
+ </style> 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script>
+google.charts.load('current', {'packages':['gauge']});
+ google.charts.setOnLoadCallback(drawChart);
+
+
+/*
+if (!!window.EventSource) {
+  var source = new EventSource('/');
+  source.onmessage = function(e) {
+    $("#testdata").text(e.data);
+  }
+}
+*/
+function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Network', 68]
+        ]);
+
+        var options = {
+          width: 800, height: 600,
+          redFrom: 900, redTo: 1000,
+          yellowFrom:750, yellowTo: 900,
+          minorTicks: 20, min: 1,
+          max: 1000, majorTicks: ["0","200","400","600","800","1Gb"]
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+if (!!window.EventSource) {
+  var source = new EventSource('/');
+  source.onmessage = function(e) {
+  $("#testdata").text(e.data);
+  var temp = parseInt((e.data));
+  data.setValue(0, 1, temp);
+  chart.draw(data, options);
+
+  }
+}
+
+
+/*
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+
+ */  
+}
+
+</script>
+<div id="testdata">nothing received yet</div>
+ <div id="chart_div"style="width: 800px; height: 600px;"></div>
