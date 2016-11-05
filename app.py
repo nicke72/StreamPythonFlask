@@ -16,7 +16,7 @@ def index():
             #for i, c in enumerate(itertools.cycle('\|/-')):
             #    yield "data: %s %d\n\n" % (c, i)
             #    time.sleep(1)  # an artificial delay
-	    c = random.randint(1, 1000)
+	    c = random.randint(1, 2000)
 	    yield "data: %s\n\n" % (c)
 	    time.sleep(5)
         return Response(events(), content_type='text/event-stream')
