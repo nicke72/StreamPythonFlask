@@ -10,7 +10,7 @@ Simple toy project to display internet usage. Use as you like.
   * Flask web framework
 
 
-### Comming soon:
+### Coming soon:
 
   * Procera Packet Logic interaction.
 
