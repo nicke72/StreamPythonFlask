@@ -23,7 +23,7 @@ Uses Stream to update the client side. Most of the code is borrowed from various
 
 ### Coming soon:
 
-  * Procera Packet Logic interaction. (ie: read interface statistics)
+~~  * Procera Packet Logic interaction. (ie: read interface statistics) ~~
   * Better looking web frontend. (ie: HTML/CSS)
 
 
