@@ -10,7 +10,19 @@ Uses Stream to update the client side. Most of the code is borrowed from various
 
   * Python
   * Flask web framework
+  * PacketLogic API
 
+### Installation:
+  
+  * sudo apt-get install git
+  * git clone https://github.com/nicke72/StreamPythonFlask.git
+  * sudo apt-get install virtualenv
+  * sudo apt-get install python-pip
+  * sudo pip install virtualenv
+  * virtualenv venv
+  * source venv/bin/activate
+  * pip install flask
+  * easy_install plapi-17.0.0py2-py2.7-linux-x86_64.egg
 
 ### Components:
   
