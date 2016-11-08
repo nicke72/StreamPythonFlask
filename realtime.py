@@ -34,22 +34,6 @@ import time
 import packetlogic2
 
 #
-# "parse" arguments.
-#
-"""
-try:
-    [host, user, pwd, path] = sys.argv[1:]
-except ValueError:
-    print "Usage: realtime_display_netobject_data.py plhost pluser plpass netobjectpath"
-    print "Example: realtime_display_netobject_data.py 192.168.1.25 admin pldemo00 PSM/RNC/100-34"
-    sys.exit(1)
-
-if not path.startswith("/NetObjects/"):
-    if not path.startswith("/"):
-        path = "/" + path
-    path = "/NetObjects" + path
-"""
-#
 # Connect to PacketLogic system
 #172.17.0.9 plview plview /NetObjects/All_Traffic
 
@@ -92,8 +76,5 @@ def display_netobject_data(objects):
 #
 # Setup callback for netobject data and run
 #
-#for x in range(0,10):
 rt.add_netobj_callback(display_netobject_data, under=path)
-#  time.sleep (5)
 rt.update_forever()
-

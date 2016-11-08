@@ -16,20 +16,6 @@ log.setLevel(logging.ERROR)
 def index():
     if request.headers.get('accept') == 'text/event-stream':
         def events():
-	    host = "172.17.0.9"
-	    user = "plview"
-            pwd = "plview"
-            path = "/NetObjects/All_Traffic"
-            try:
-              pl = packetlogic2.connect(host, user, pwd)
-            except:
-              t, v, tb = sys.exc_info()
-              print "Error: Couldn't connect: %s" % v
-              sys.exit(1)
-            rt = pl.Realtime()
-
-
-
             #for i, c in enumerate(itertools.cycle('\|/-')):
             #    yield "data: %s %d\n\n" % (c, i)
             #    time.sleep(1)  # an artificial delay
@@ -37,7 +23,7 @@ def index():
             file = open('newfile.txt', 'r')
 	    c = file.readline( )
 	    yield "data: %s\n\n" % (c)
-	    time.sleep(2)
+	    #time.sleep(2)
         return Response(events(), content_type='text/event-stream')
     return redirect(url_for('static', filename='index.html'))
 

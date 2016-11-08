@@ -35,7 +35,7 @@ function drawChart() {
           redFrom: 1700, redTo: 2000,
           yellowFrom:1300, yellowTo: 1700,
           minorTicks: 5, min: 1,
-          max: 2000, majorTicks: ["0","0,5","1Gb","1,5","2Gb"]
+          max: 2000, majorTicks: ["0","0,5","1Gb","1,5","2Gb"], animation: { duration: 4000, easing: 'inAndOut', }
         };
 
         var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
