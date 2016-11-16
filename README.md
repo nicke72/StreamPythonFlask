@@ -16,7 +16,6 @@ Uses Stream to update the client side. Most of the code is borrowed from various
   
   * sudo apt-get install git
   * git clone https://github.com/nicke72/StreamPythonFlask.git
-  * sudo apt-get install virtualenv
   * sudo apt-get install python-pip
   * sudo pip install virtualenv
   * virtualenv venv
