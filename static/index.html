@@ -32,10 +32,10 @@ function drawChart() {
 
         var options = {
           width: 800, height: 600,
-          redFrom: 1700, redTo: 2000,
-          yellowFrom:1300, yellowTo: 1700,
+          redFrom: 3500, redTo: 4000,
+          yellowFrom:3000, yellowTo: 3500,
           minorTicks: 5, min: 1,
-          max: 2000, majorTicks: ["0","0,5","1Gb","1,5","2Gb"], animation: { duration: 4000, easing: 'inAndOut', }
+          max: 4000, majorTicks: ["0","1","2Gb","3","4Gb"], animation: { duration: 4000, easing: 'inAndOut', }
         };
 
         var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
