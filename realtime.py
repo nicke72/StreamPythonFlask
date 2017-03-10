@@ -62,16 +62,16 @@ rt = pl.Realtime()
 def display_netobject_data(objects):
 #    print "%s %s" % (time.ctime(), ("=" * 60))
     for o in objects:
-#        print o.fullpath
-#        print "%8d" % ((o.speed[0]*8)/1000000)
+#         print o.fullpath
+#         print "%8d" % ((o.speed[0]*8)/1000000)
          file = open("newfile.txt", "w")
          hastighet = (o.speed[0]*8)/1000000
          print hastighet
          file.write(str(hastighet))
          file.close()
-#        print "             cps in/out: %8d %8d" % o.cps
-#        print "   connection est/unest: %8d %8d" % o.connections
-#    print
+#        print "             cps in/out: %8d %8d" %o.cps
+#        print "   connection est/unest: %8d %8d" %o.connections
+#        print
     
 #
 # Setup callback for netobject data and run
