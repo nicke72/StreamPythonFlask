@@ -22,11 +22,11 @@ def index():
 	    #c = random.randint(1, 2000)
             file = open('newfile.txt', 'r')
 	    c = file.readline( )
-	    yield "data: %s\n\n" % (c)
+	    yield "data: %s \n\n" % (c)
 	    #time.sleep(2)
         return Response(events(), content_type='text/event-stream')
     return redirect(url_for('static', filename='index.html'))
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True,host='0.0.0.0',port=5000)
 
